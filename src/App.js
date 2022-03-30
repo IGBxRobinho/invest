@@ -6,6 +6,7 @@ import { useState } from 'react';
 function App() {
 
   const [quantidade, setQuantidade] = useState('');
+  const [capital, setCapital] = useState('');
   const [anos, setAnos] = useState('');
   const [rendimentoM, setRendimentoM] = useState('');
   const [quanto, setQuanto] = useState('');
@@ -16,10 +17,10 @@ function App() {
 
     let totalMeses = anos*12
 
-    let montante = (0 * ((1 + (rendimentoM / 100)) ** totalMeses)) + (quantidade * (((((1 +(rendimentoM / 100)) ** totalMeses) - 1) / (rendimentoM / 100))));
+    let montante = (capital * ((1 + (rendimentoM / 100)) ** totalMeses)) + (quantidade * (((((1 +(rendimentoM / 100)) ** totalMeses) - 1) / (rendimentoM / 100))));
     setQuanto(montante.toFixed(2));
 
-    let rendimentoMensal = (quanto * rendimentoM) / 100
+    let rendimentoMensal = (montante * rendimentoM) / 100
     setMensal(rendimentoMensal.toFixed(2))
 
     let rendimentoAnual = (rendimentoMensal * 12)
@@ -31,6 +32,10 @@ function App() {
     <div className="App">
       <label>Média de investimento</label><br />
       <br />
+
+      
+      <label>Capital inicial</label><br />
+      <input type="text" value={capital} onChange={(e) => setCapital(e.target.value)}></input><br />
 
       <label>Quantidade</label><br />
       <input type="text" value={quantidade} onChange={(e) => setQuantidade(e.target.value)}></input><br />
