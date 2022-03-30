@@ -29,6 +29,9 @@ function App() {
 
   return (
     <div className="App">
+      <label>Média de investimento</label><br />
+      <br />
+
       <label>Quantidade</label><br />
       <input type="text" value={quantidade} onChange={(e) => setQuantidade(e.target.value)}></input><br />
 
