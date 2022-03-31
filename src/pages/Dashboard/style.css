@@ -1,0 +1,43 @@
+
+.container{
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    padding: .8em;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+  
+  .container input, textarea, selct{
+    margin-bottom: 1em;
+    padding: .7em;
+    border:1;
+    border-radius: 10px;
+    max-width: 600px;
+  }
+
+  .container input:disabled{
+    cursor: not-allowed;
+  }
+
+  .container label{
+    margin-bottom: .5em;
+    font-size: 1.4em;
+  }
+  
+  .btnCalcular{
+    padding: 8px 20px;
+    background-color: #f2f2f2;
+    border:1px solid #121212;
+    border-radius: 5px;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btnCalcular:hover{
+    background-color: #fff;
+  }
+
